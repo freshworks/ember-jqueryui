@@ -1,6 +1,13 @@
 # Ember-jqueryui
 
-This README outlines the details of collaborating on this Ember addon.
+This addon provides wrapper for jquery UI's draggable, droppable and sortable.
+We currently use jquery-ui v1.11.4 custom build which uses:
+   * core.min.js
+   * widget.min.js
+   * mouse.min.js
+   * draggable.min.js
+   * droppable.min.js
+   * sortable.min.js
 
 ## Installation
 
