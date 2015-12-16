@@ -1,0 +1,1 @@
+export { default } from 'ember-jqueryui/utils/jquery-ui';
