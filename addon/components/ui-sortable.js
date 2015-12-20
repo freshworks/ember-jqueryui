@@ -1,12 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-sortable';
-import JqueryUIUtil from '../utils/ember-jqueryui';
+import JqueryUIMethods from '../mixins/jqueryui-methods';
 
 const {
   on
 } = Ember;
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(JqueryUIMethods, {
   attributeBindings: ['data-value'],
   'data-value': null,
   layout: layout,
@@ -18,7 +18,7 @@ export default Ember.Component.extend({
                       'helper', 'items', 'opacity', 'placeholder', 'revert',
                       'scroll', 'scrollSensitivity', 'scrollSpeed', 'tolerance', 'zIndex'];
 
-    let sortableOptions = JqueryUIUtil.optionCompiler(this, _OPTIONS, this._actionBinders());
+    let sortableOptions = this._optionCompiler(this, _OPTIONS, this._actionBinders());
 
     this.$().sortable(sortableOptions);
   }),

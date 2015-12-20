@@ -1,7 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-
 moduleForComponent('ui-droppable', 'Integration | Component | ui droppable', {
   integration: true
 });
@@ -14,7 +13,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{ui-droppable}}`);
 
-  assert.equal(this.$().text(), '');
+  assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`

@@ -1,24 +1,24 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-droppable';
-import JqueryUIUtil from '../utils/ember-jqueryui';
+import JqueryUIMethods from '../mixins/jqueryui-methods';
 
 const {
   on
 } = Ember;
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(JqueryUIMethods, {
   attributeBindings: ['data-value'],
   'data-value': null,
   layout: layout,
 
-  initializeDroppable: function() {
+  initializeDroppable: on('didInsertElement', function() {
     const _OPTIONS = ['accept', 'activeClass', 'addClasses', 'disabled', 'greedy',
                       'hoverClass', 'scope', 'tolerance'];
 
-    let droppableOptions = JqueryUIUtil.optionCompiler(this, _OPTIONS, this._actionBinders());
+    let droppableOptions = this._optionCompiler(this, _OPTIONS, this._actionBinders());
 
     this.$().droppable(droppableOptions);
-  }.on('didInsertElement'),
+  }),
 
   destroyDroppable: on('willDestroyElement', function() {
     this.$().droppable('destroy');

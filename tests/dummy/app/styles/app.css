@@ -1,0 +1,7 @@
+.ui-draggable {
+  z-index: 10;
+}
+.ui-draggable-handle,
+.ui-sortable-handle {
+  cursor: move;
+}

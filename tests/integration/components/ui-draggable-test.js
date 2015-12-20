@@ -1,7 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-
 moduleForComponent('ui-draggable', 'Integration | Component | ui draggable', {
   integration: true
 });
@@ -14,7 +13,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{ui-draggable}}`);
 
-  assert.equal(this.$().text(), '');
+  assert.equal(this.$().text().trim(), '', 'Dummy component with no yield is rendered');
 
   // Template block usage:
   this.render(hbs`
@@ -23,5 +22,5 @@ test('it renders', function(assert) {
     {{/ui-draggable}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), 'template block text', 'Yield works fine!');
 });

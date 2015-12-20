@@ -1,3 +1,48 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 id="title">Integration testing with jQuery UI</h2>
 
-{{outlet}}
+      <h3>Draggable</h3>
+      {{#ui-draggable}}
+        <div class="col-md-5 alert alert-info">
+          You can drag and drop this area
+        </div>
+      {{/ui-draggable}}
+
+      <div class="clearfix"></div>
+      <hr />
+
+      <h3>Droppable - Connected with a draggable</h3>
+      <div class="row">
+        {{#ui-draggable id="draggable" class="col-md-5" revert=true}}
+          <div class="alert alert-info">
+            You can drag and drop this area
+          </div>
+        {{/ui-draggable}}
+        {{#ui-droppable accept="#draggable" tolerance="pointer" onDrop="dragDrop1" class="col-md-5"}}
+          <div class="alert alert-warning">
+            You can drag and drop into this area
+          </div>
+        {{/ui-droppable}}
+      </div>
+
+      <div class="clearfix"></div>
+      <hr />
+
+      <h3>Sortable</h3>
+      {{#ui-sortable class="list-group"}}
+        <li class="list-group-item ui-state-default"><div class="label label-default">Item 1</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-primary">Item 2</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-info">Item 3</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-warning">Item 4</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-primary">Item 5</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-default">Item 6</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-info">Item 7</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-primary">Item 8</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-warning">Item 9</div></li>
+        <li class="list-group-item ui-state-default"><div class="label label-default">Item 10</div></li>
+      {{/ui-sortable}}
+    </div>
+  </div>
+</div>

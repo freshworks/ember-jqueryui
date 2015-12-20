@@ -1,17 +1,17 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-draggable';
-import JqueryUIUtil from '../utils/ember-jqueryui';
+import JqueryUIMethods from '../mixins/jqueryui-methods';
 
 const {
   on
 } = Ember;
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(JqueryUIMethods, {
   attributeBindings: ['data-value'],
   'data-value': null,
   layout: layout,
 
-  initializeDroppable: function() {
+  initializeDroppable: on('didInsertElement', function() {
     const _OPTIONS = ['addClasses', 'appendTo', 'axis', 'cancel', 'connectToSortable',
                       'containment', 'cursor', 'cursorAt', 'delay', 'disabled',
                       'distance', 'grid', 'handle', 'helper', 'opacity',
@@ -19,10 +19,10 @@ export default Ember.Component.extend({
                       'scrollSensitivity', 'scrollSpeed', 'snap', 'snapMode', 'snapTolerance',
                       'stack', 'zIndex'];
 
-    let draggableOptions = JqueryUIUtil.optionCompiler(this, _OPTIONS, this._actionBinders());
+    let draggableOptions = this._optionCompiler(this, _OPTIONS, this._actionBinders());
 
     this.$().draggable(draggableOptions).disableSelection();
-  }.on('didInsertElement'),
+  }),
 
   destroyDroppable: on('willDestroyElement', function() {
     this.$().draggable('destroy');
