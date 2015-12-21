@@ -1,7 +1,7 @@
 # Ember jQuery UI
 
 This addon provides wrapper for jquery UI's draggable, droppable and sortable.
-We currently use jquery-ui v1.11.4 custom build which uses:
+We currently using jquery-ui v1.11.4 custom build with the following plugins:
    * core.min.js
    * widget.min.js
    * mouse.min.js
