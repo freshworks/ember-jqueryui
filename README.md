@@ -12,7 +12,7 @@ We currently using jquery-ui v1.11.4 custom build with the following plugins:
 ## Installation
 
 ```
-ember install ember-jqueryui
+Add this git repo to your package.json to make it work. As this addon is still under development, this will be published to npm once stable.
 ```
 
 ##Supports
