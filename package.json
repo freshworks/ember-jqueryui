@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "ember-cli-babel": "^5.0.0",
-    "ember-cli-htmlbars": "0.7.6"
+    "ember-cli-htmlbars": "^1.0.8"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
