@@ -7,7 +7,7 @@ const {
 } = Ember;
 
 export default Ember.Component.extend(JqueryUIMethods, {
-  attributeBindings: ['data-value'],
+  attributeBindings: ['data-value', 'droppableStyle:style'],
   'data-value': null,
   layout: layout,
 
